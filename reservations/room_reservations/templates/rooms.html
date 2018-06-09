@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block extra_header %}
+    <title>Room list</title>
+{% endblock %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Capacity</th>
+        <th>Projector</th>
+        <th>Action</th>
+    </tr>
+    {% for room in rooms %}
+    <tr>
+        <td>
+            {{room.name}}
+        </td>
+        <td>capacity: {{room.capacity}}</td>
+        <td>
+    {% if room.projector == True %}
+    Projector: Yes</td>
+    {% else %}
+    Projector: No</td>
+    {% endif %}
+        <td>
+            <a href="{% url 'edit-room' room.id %}"><button type="button" class="btn btn-success">Edit</button></a>
+            <a href="{% url 'delete-room' room.id%}"><button type="button" class="btn btn-danger">Delete</button></a>
+        </td>
+        </tr>
+
+    {% endfor %}
+</table>
+
+{% endblock %}}

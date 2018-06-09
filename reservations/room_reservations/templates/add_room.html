@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block extra_header %}
+    <title>New Room</title>
+{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    <label>Name:</label><br>
+    <input type="text" name="name"><br>
+    <label>Capacity:</label><br>
+    <input type="number" name="capacity"><br>
+    <label>Projector:</label>
+    <input type="radio" name="projector" value="True">Yes
+    <input type="radio" name="projector" value="False">No<br>
+    <input type="submit" value="submit">
+</form>
+
+
+{% endblock %}

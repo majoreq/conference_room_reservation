@@ -9,5 +9,5 @@ class Room(models.Model):
 
 class Reservation(models.Model):
     date = models.DateField(verbose_name="date")
-    room_id = models.ForeignKey(Room, verbose_name="room_id", on_delete=models.SET_NULL, null=True)
+    room_id = models.ForeignKey(Room, verbose_name="room_id", on_delete=models.CASCADE)
     comment = models.TextField(verbose_name="comment")
