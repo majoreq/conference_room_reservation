@@ -1,24 +1,10 @@
 {% extends 'base.html' %}
 
 {% block extra_header %}
-    <title>Room list</title>
+    <title>Search result</title>
 {% endblock %}
 
 {% block content %}
-<p>SEARCH</p>
-<form method="GET" action="{% url 'search' %}">
-    <label>name:</label><br>
-    <input type="text" name="name"><br>
-    <label>min. capacity:</label><br>
-    <input type="number" name="capacity"><br>
-    <label>date:</label><br>
-    <input type="date" name="date"><br>
-    <label>projector:</label><br>
-    <input type="radio" name="projector" value="True">Yes
-    <input type="radio" name="projector" value="False">No<br>
-    <input type="submit" value="submit">
-</form>
-
 <table>
     <tr>
         <th>Name</th>

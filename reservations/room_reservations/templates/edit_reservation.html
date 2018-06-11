@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block extra_header %}
+<title>Reservation {{reservation.room.name}}</title>
+{% endblock %}
+
+{% block content %}
+
+<h1>{{reservation.room.name}}</h1>
+<p>Capacity: {{reservation.room.capacity}}, Projector:
+    {% if reservation.room.projector == True %}
+    Yes
+    {% else %}
+    no
+    {% endif %}</p>
+<form method="POST">
+    {% csrf_token %}
+    <label>date:</label>
+    <input type="date" name="date" value={{reservation.date|date:"Y-m-d" }}><br>
+    <labe>comment: </labe>
+    <textarea class="form-control" rows="3" name="comment">{{reservation.comment}}</textarea>
+    <input type="submit" value="submit">
+</form>
+
+{% endblock %}
